@@ -1,0 +1,23 @@
+name: CMake Build & Test
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Configure CMake
+      run: cmake -B build -S .
+    
+    - name: Build
+      run: cmake --build build
+    
+    - name: Run Application
+      run: ./build/bin/calculator_app
