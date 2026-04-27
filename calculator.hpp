@@ -4,7 +4,7 @@
 class calculator{
 
     public:
-        double add(double, double);
+        double addition(double, double);
         double sub(double, double);
         double multiply(double, double);
         double division(double, double);
